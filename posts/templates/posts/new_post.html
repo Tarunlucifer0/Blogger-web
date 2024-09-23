@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}
+    {{post.title}}
+{% endblock %}
+new post
+{% block content %}
+
+<section>
+    <h1>Write a new post</h1>
+    <form class="form-with-validation" action="{% url 'posts:new_post' %}" method="post" enctype="mulripart/form-data" >
+        {% csrf_token %}
+        {{form }}
+        <button class="form-submit" >Add Post</button>
+    </form>
+</section>
+{% endblock %}
